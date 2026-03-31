@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* index  */
+
+body {
+
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevents weird side-scrolling */
+}
+
+.content > div, #heading {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+
+#heading {
+
+    margin: 40px 30px 40px 180px;
+    text-align: center;
+    font-size: 200px;
+    font-family:'Segoe UI';
+    font-size: clamp(40px, 8vw, 80px); /* Shrinks on smaller screens */
+    margin: 0px 0 40px 180px; /* Top, Right, Bottom, Left (to clear sidebar) */
+    transition: margin-left 0.4s ease;
+
+}
+
+#home_image {
+
+    border-radius: 50%;
+    border: 5px solid rgb(91, 96, 108);
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    transition: margin-left 0.3s ease-in-out;
+
+}
+
+.sidebar {
+
+    position: fixed;
+    left: 0;
+    top: 0 !important;
+    width: 160px;
+    height: 100vh;
+    background-color: #8A9A5B;
+    overflow: hidden;
+    transition: width 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000;
+
+}
+
+.sidebar:hover {
+    width: 243px;
+
+}
+
+.sidebar:hover #home_image {
+    transform: rotate(360deg); 
+    border-color: #1abc9c;
+}
+
+.nav-links {
+
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping while sidebar expands */
+
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 50px;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+.nav-links a, 
+.nav-links a:visited, 
+.nav-links a:active {
+    color: white;
+    text-decoration: none;
+}
+
+th {
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+td {
+    padding: 15px 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Starts 30px lower than its spot */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Ends in its original spot */
+    }
+}
+body{
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Keeps them hidden until the animation starts */
+}
+
+.para1, .para2, .para3, #reli, #reli_ptags, .col {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Keeps them hidden until their turn */
+}
+
+.col {
+
+    animation-delay: 0.5s;
+
+}
+
+#reli {
+
+    animation-delay: .5s;
+
+}
+
+#reli_ptags {
+
+    animation-delay: 1.0s;
+
+}
+
+
+/* 2. Now, set the individual wait times (The Staircase) */
+.para1 {
+    animation-delay: 0.2s;
+}
+
+.para2 {
+    animation-delay: 0.7s; /* Waits 0.7 seconds */
+}
+
+.para3 {
+    animation-delay: 1.2s; /* Waits over a second */
+}
+
+/* The first box pops up immediately */
+#provide {
+
+    margin-left: 450px;
+    animation-delay: 0.2s;
+    border: 2px solid #8A9A5B;
+    background: #8A9A5B;
+    width: 600px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* The second box waits 0.4 seconds */
+#reli_ptags_homepage, #reli_ptags, .para1 {
+    animation-delay: .5s;
+}
+
+
+/* The form waits 0.6 seconds */
+.col {
+    animation-delay: 0.6s;
+}
+
+#provision {
+
+    text-align: center;
+
+}
+
+/*-------------------------------------------------------------------------------------------- Contact Info */
+
+
+
+.col {
+    position: absolute;
+    display: flex;
+    flex-direction: column; /* This is the magic line for vertical stacking */
+    margin-left: 250px;    /* Keeps your current positioning */
+    width: 400px;         /* Gives the form a specific width so it's readable */
+    margin-top: 5px;
+    border: 5px solid lightblue;
+    border-radius: 50px;
+    padding: 20px 20px 20px 20px;
+    padding-right: 40px;
+
+}
+
+.col label {
+    margin-top: 15px;
+}
+
+#name, #name_box {
+
+    margin-top: 0 !important;
+
+}
+
+.col input, .col textarea {
+    padding: 10px;
+    margin-top: 2px;
+}
+
+input, textarea {
+
+    border: 2px solid darkcyan;
+    border-radius: 20px;
+
+}
+
+/* Container for the Question label and Textarea */
+.questions_message {
+    display: flex;
+    flex-direction: column; /* Stacks label on top of box */
+    align-items: flex-start; /* Aligns them to the left */
+    margin-top: 10px;
+}
+
+#questions {
+    margin-bottom: 8px; /* Space between label and box */
+}
+
+#text {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px; /* Matches your rounded theme */
+    border: 2px solid lightblue;
+    font-family: inherit;
+    resize: vertical; /* User can only drag it up/down, not sideways */
+}
+
+#submit {
+
+    margin-left: 10px;
+
+}
+
+/* Styling the actual button, not just the container */
+#submit button {
+    display: flex;
+    justify-content: center; align-items: center;
+    background-color: darkcyan; /* Matches your sidebar */
+    color: white;
+    padding: 12px 30px;
+    border: 2px solid darkcyan;
+    border-radius: 25px; /* Rounded pill shape */
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for color and size */
+    width: 100%; /* Makes it fill the width of your form */
+    margin-top: 20px;
+    outline: none;
+}
+
+/* Hover Effect: The button "glows" and gets slightly bigger */
+#submit button:hover {
+    background-color: #1abc9c; /* Matches your sidebar icon hover color */
+    color: #2c3e50;
+    transform: translateY(-3px); /* Lifts the button slightly */
+    box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4); /* Soft glow */
+}
+
+/* Active Effect: When the user actually clicks it */
+#submit button:active {
+    transform: translateY(4px); /* Pushes it down like a real button */
+}
+
+/* Container to sit them side-by-side */
+.date-row {
+    display: flex;
+    flex-direction: row; 
+    gap: 20px;          /* Space between Day and Month columns */
+    margin-top: 15px;   /* Matches your other label margins */
+}
+
+/* Ensures label stays on top of input within the row */
+.date-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;            /* Makes both boxes take up equal width */
+}
+
+/* Adjusting your existing ID styles to fill the new container */
+#day_box, #month_box {
+    width: 180px;  
+}
+
+#month_box, #day_box {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid darkcyan;
+    border-radius: 20px;
+    background-color: white; /* Ensures it's not transparent */
+    cursor: pointer;
+}
+
+select {
+
+    text-align: center;
+
+}
+
+#day, #month {
+
+    margin-bottom: 5px;
+
+}
+
+#a {
+
+    text-align: center;
+    /* padding-bottom: -40px; */
+
+}
+
+#reli{
+
+    margin-left: 750px;
+    font-size: 36px;
+    margin-top: 20px;
+    font-family:'Times New Roman';
+
+}
+
+#reli_ptags {
+
+    font-size: 20px;
+    margin-left: 750px;
+    margin-top: 60px;
+    font-weight: 200;
+
+
+}
+
+
+#reli, #reli_ptags, #reli_ptags_homepage {
+
+    border: 2px solid #8A9A5B;
+    background: #8A9A5B;
+    width: 400px;
+    border-radius: 20px;
+    padding: 10px;
+
+    
+}
+
+#reli_ptags_homepage {
+
+    font-size: 20px;
+    margin-left: 350px;
+    margin-top: 150px;
+    font-weight: 200;
+    width: 900px;
+
+}
+
+#who {
+
+    text-align: center;   
+    padding-bottom: 10px; 
+
+}
+
+#link {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+/* ------------------------------------------------------------------------------------------About Us */
+
+.para1, .para2, .para3 {
+
+    border: 2px solid #8A9A5B;
+    background-color: #8A9A5B;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 30px;
+    width:600px;
+}
+
+.para1 {
+
+    width: 550px;
+    margin-left:300px;
+    
+}
+
+.para2 {
+
+    margin-left: 700px;
+
+}
+
+.para3{
+
+    margin-left: 300px;
+
+
+}
+
+/* This only runs when the JavaScript 'boolean' is true (class is added) */
+.show-confetti::before {
+    content: '';
+    position: fixed;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So you can still click things under it */
+    z-index: 9999;
+    
+    /* Creating the 'confetti' using a repeating background */
+    background-image: 
+        radial-gradient(circle, #FFD700 10%, transparent 10%),
+        radial-gradient(circle, #1abc9c 10%, transparent 10%),
+        radial-gradient(circle, #ff6b6b 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px, 10px 40px;
+    
+    /* Running the animation */
+    animation: fallConfetti 3s ease-out forwards;
+}
+
+@keyframes fallConfetti {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
